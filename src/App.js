@@ -11,6 +11,7 @@ import { useState } from 'react';
 function App() {
   const [calcValue, setCalcValue] = useState(0);
   const [negative, setNegative] = useState(false);
+  const [calcType, setCalcType] = useState('');
 
   const handleNumberClick = (event) => {
     const enteredValue = parseInt(event.target.value);
@@ -21,13 +22,20 @@ function App() {
         : currentCalcValue + '' + enteredValue;
     setCalcValue(newCalcStr);
   };
+
+  const handleNegativeClick = (event) => {
+    const newCalcValue = event.target.value
+      ? parseInt(calcValue) * -1
+      : calcValue;
+    setCalcValue(newCalcValue);
+    const newNegative = newCalcValue < 0;
+    setNegative(newNegative);
+  };
+
   return (
     <div className='App'>
       <div className='number-spot'>
-        <p>
-          {negative ? '-' : ''}
-          {calcValue}
-        </p>
+        <p>{calcValue}</p>
       </div>
       <div className='btn-panel'>
         <div className='btn-row'>
@@ -35,9 +43,8 @@ function App() {
             <button className='btn'>AC</button>
             <button
               className='btn'
-              onClick={() => {
-                setNegative(!negative);
-              }}
+              value={negative}
+              onClick={handleNegativeClick}
             >
               +/-
             </button>
