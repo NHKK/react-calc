@@ -6,12 +6,14 @@ import {
   faDivide,
   faEquals,
 } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 function App() {
+  const [calcValue, setCalcValue] = useState(0);
   return (
     <div className='App'>
       <div className='number-spot'>
-        <p>This text is centered.</p>
+        <p>{calcValue}</p>
       </div>
       <div className='btn-panel'>
         <div className='btn-row'>
