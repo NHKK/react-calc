@@ -15,11 +15,11 @@ function App() {
   const handleNumberClick = (event) => {
     const enteredValue = parseInt(event.target.value);
     const currentCalcValue = parseInt(calcValue);
-    if (enteredValue === enteredValue + currentCalcValue) {
-      setCalcValue(enteredValue);
-    } else {
-      setCalcValue(currentCalcValue + '' + enteredValue);
-    }
+    const newCalcStr =
+      enteredValue === enteredValue + currentCalcValue
+        ? enteredValue
+        : currentCalcValue + '' + enteredValue;
+    setCalcValue(newCalcStr);
   };
   return (
     <div className='App'>
