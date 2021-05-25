@@ -13,7 +13,13 @@ function App() {
   const [negative, setNegative] = useState(false);
 
   const handleNumberClick = (event) => {
-    console.log(event.target.value);
+    const enteredValue = parseInt(event.target.value);
+    const currentCalcValue = parseInt(calcValue);
+    if (enteredValue === enteredValue + currentCalcValue) {
+      setCalcValue(enteredValue);
+    } else {
+      setCalcValue(currentCalcValue + '' + enteredValue);
+    }
   };
   return (
     <div className='App'>
