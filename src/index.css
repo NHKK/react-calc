@@ -60,3 +60,6 @@ code {
 .yellow-bkg:focus {
   background: #c7b1fb;
 }
+.btn-two {
+  width: 50%;
+}

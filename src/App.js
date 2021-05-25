@@ -48,10 +48,9 @@ function App() {
             </button>
           </div>
           <div className='btn-row-container'>
-            <button className='btn'>5</button>
-            <button className='btn'>6</button>
-            <button className='btn'>7</button>
-            <button className='btn yellow-bkg'>
+            <button className='btn'>0</button>
+            <button className='btn'>.</button>
+            <button className='btn btn-two yellow-bkg'>
               <FontAwesomeIcon icon={faEquals} />
             </button>
           </div>
