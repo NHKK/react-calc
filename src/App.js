@@ -10,16 +10,28 @@ import { useState } from 'react';
 
 function App() {
   const [calcValue, setCalcValue] = useState(0);
+  const [negative, setNegative] = useState(false);
+
   return (
     <div className='App'>
       <div className='number-spot'>
-        <p>{calcValue}</p>
+        <p>
+          {negative ? '-' : ''}
+          {calcValue}
+        </p>
       </div>
       <div className='btn-panel'>
         <div className='btn-row'>
           <div className='btn-row-container'>
             <button className='btn'>AC</button>
-            <button className='btn'>+/-</button>
+            <button
+              className='btn'
+              onClick={() => {
+                setNegative(!negative);
+              }}
+            >
+              +/-
+            </button>
             <button className='btn'>%</button>
             <button className='btn'>
               <FontAwesomeIcon icon={faDivide} />

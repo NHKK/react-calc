@@ -15,11 +15,13 @@ code {
 
 /* custom button style */
 .number-spot {
-  height: 20vh;
   width: 98%;
   color: #ffffff;
   font-size: 5vw;
   text-align: right;
+}
+.vertical-center {
+  top: 50%;
 }
 
 /* custom button style */
